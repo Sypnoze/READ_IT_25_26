@@ -2,12 +2,21 @@ RewriteEngine on
 
 # ROUTES
 
-# posts.show
-# URL: posts/id/slug
-# PATTERN: ?posts=show&id=x
-RewriteRule ^posts/([1-9][0-9]*)/[a-z0-9][a-z0-9\-]*$ index.php?posts=show&id=$1 [L]
+# ROUTE users.logout
+# URL: users/logout
+# PATTERN: ?users=logout
+RewriteRule ^users/logout$ index.php?users=logout [L]
+
+# ROUTE users.index
+# URL: users
+# PATTERN: ?users=index
+RewriteRule ^users$ index.php?users=index [L]
+
+# ROUTE users.new
+# URL: users/new
+# PATTERN: ?users=new
+RewriteRule ^users/new$ index.php?users=new [L]
 
 # --------------------------------------------------
 RewriteCond %{REQUEST_URI} !\.(js|css|jpg|gif|zip|png|pdf)$ [NC]
 RewriteRule ^(.*)$ index.php [L]
-

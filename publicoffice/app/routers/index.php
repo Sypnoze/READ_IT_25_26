@@ -2,7 +2,12 @@
 
 
 // Routes des posts
-if (isset($_GET['posts'])):
+if (isset($_GET['users'])):
+    include_once '../app/routers/users.php';
+
+
+// Routes des posts
+elseif (isset($_GET['posts'])):
     include_once '../app/routers/posts.php';
 
 

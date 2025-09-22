@@ -36,3 +36,11 @@ function newAction()
     include '../app/views/users/new.php';
     $content = ob_get_clean();
 }
+
+
+function createAction(PDO $conn, array $data)
+{
+    include_once '../app/models/usersModel.php';
+    $user = UsersModel\create($conn, $data);
+    header('Location: ' . ADMIN_BASE_URL . 'users');
+}
